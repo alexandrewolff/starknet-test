@@ -1,4 +1,3 @@
 const addresses = {};
-
-addresses.main_account='0x1cd68ab293b12c6769be370c3ba2498758d889df2e74afed604706331c18a7f'
-addresses.main.publicKey='0x02f756cacd8fc3d2e2f4807509c0d8202febb89f69b767fb97add039edf46aa3'
+addresses.main_account='0x5a0f42f07f8f639a5b7628ebc8e9af6e75a8a7759211440fe6b6bbdc3f32b57'
+addresses.main.publicKey='0x0679c9bd5935de6a4a59ce784a858e59fb7ed03c32bf525f8e1391e9fd487652'
