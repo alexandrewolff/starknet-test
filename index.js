@@ -1,6 +1,6 @@
 const fs = require('fs');
 const { ec, defaultProvider, Contract, Provider, Signer } = require('starknet');
-
+const savedKeyPair = require('./key-pair.json');
 const provider = new Provider({
   baseUrl: 'https://hackathon-3.starknet.io',
 });
@@ -12,7 +12,9 @@ async function createAccount() {
 
     console.log('Key pair generated');
     console.log(`Pub key: ${starkKeyPub}`);
-    console.log(starkKeyPair);
+
+    let data = JSON.stringify(starkKeyPair);
+    fs.writeFileSync('key-pair.json', data);
 
     const compiledArgentAccount = JSON.parse(
       fs.readFileSync('./ArgentAccount.json').toString('ascii'),
@@ -29,6 +31,7 @@ async function createAccount() {
     const accountContract = new Contract(
       compiledArgentAccount.abi,
       accountResponse.address,
+      provider
     );
     console.log(`Contract address: ${accountContract.address}`);
 
@@ -42,4 +45,18 @@ async function createAccount() {
   }
 }
 
+async function test1 () {
+
+  const signer = new Signer(starkKeyPair);
+  console.log(signer);
+  const pubKey  = await signer.getPubKey();
+  console.log(pubKey)
+
+  const compiledErc20 = json.parse(
+      fs.readFileSync("./ERC20.json").toString("ascii")
+  );
+}
+
+
 createAccount();
+// test1();
