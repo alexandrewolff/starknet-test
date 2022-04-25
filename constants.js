@@ -1,0 +1,4 @@
+const addresses = {};
+
+addresses.main_account='0x1cd68ab293b12c6769be370c3ba2498758d889df2e74afed604706331c18a7f'
+addresses.main.publicKey='0x02f756cacd8fc3d2e2f4807509c0d8202febb89f69b767fb97add039edf46aa3'
